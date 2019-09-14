@@ -1,0 +1,28 @@
+/*******按要求产生一个地址流数组，并将其转换为页号流数组*******/
+
+var addressArr, pageArr;
+function random() {
+    addressArr = [];
+    var randomNum;
+    for(let i = 0; i < 100; i++) { //将数组按要求填满400个数
+        randomNum = Math.floor(Math.random() * 200); //随机生成一个[0,200)之间的整数
+        addressArr.push(randomNum); //将m推进队列里
+        if(randomNum == 199) { //如果是199，则加1就溢出了
+            addressArr.push(0); //将0推进队列里
+        } else {
+            addressArr.push(randomNum + 1); //将m+1推进队列里
+        }
+        randomNum = Math.floor(Math.random() * 200 + 200); //随机生成一个[200,400)之间的整数
+        addressArr.push(randomNum); //将m’推进队列里
+        if(randomNum == 399) { //如果是399，则加1就溢出了
+            addressArr.push(200); //将200推进队列里
+        } else {
+            addressArr.push(randomNum + 1); //将m’+1推进队列里
+        }
+    }
+    pageArr = addressArr.map(
+        function(x) {
+            return(Math.floor(x / 10));
+        }
+    );
+}

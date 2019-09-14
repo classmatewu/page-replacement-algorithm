@@ -1,0 +1,99 @@
+body {
+    background-color: #eebb66;
+}
+/*上盘标题*/
+.headline {
+    font-size: 22px;
+    text-align: center;
+    padding: 20px;
+}
+/*表单*/
+/*.addressTxt {*/
+    /*-web-kit-appearance:none;*/
+    /*-moz-appearance: none;*/
+    /*display: block;*/
+    /*margin: 0 auto;*/
+    /*font-size:15px;*/
+    /*width: 500px;*/
+    /*height: 80px;*/
+/*}*/
+.addressTxt, .pageNumTxt {
+    width: 870px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    font-size:15px;
+    width: 500px;
+    height: 80px;
+}
+.btn {
+    background: #0e62a3;
+    cursor: pointer;
+}
+/*.addressTxt {*/
+    /*height:35px;*/
+    /*border-radius:3px;*/
+    /*border:1px solid #c8cccf;*/
+    /*color:#6a6f77;*/
+    /*outline:0;*/
+/*}*/
+.btn {
+    margin-top: 25px;
+    height: 35px;
+    background: #357eb8;
+    color: #bcedff;
+    font-weight: bold;
+    font-size: 16px;
+}
+/*input[type="submit"]:hover {*/
+    /*background: #0e62a3;*/
+    /*cursor: pointer;*/
+/*}*/
+/*地址流与页号流文字说明*/
+.address, .pageNum {
+    margin: 5px 0 5px 42px;
+    font-size:17px;
+    color: #6a6f77;
+}
+/*上盘*/
+.product {
+    width: 900px;
+    height: 400px;
+    /*background-color:rgba(255, 255, 255, 0.75);*/
+    margin: 0 auto;
+}
+/*下盘*/
+.display {
+    width: 700px;
+    /*height: 460px;*/
+    /*background-color:rgba(255, 255, 255, 0.75);*/
+    margin: 0px auto;
+}
+.display table {
+    margin: 20px auto;
+    /*background-color: #357eb8;*/
+}
+/*底盘*/
+.chassis {
+    width: 950px;
+    /*height: ;*/
+    /*background-color: white;*/
+    background-color:rgba(255, 255, 255, 0.25);
+    margin: 0 auto 80px;
+}
+.abstract{
+    width: 800px;
+    margin: 0 auto;
+}
+.summary {
+    width: 800px;
+    margin: 30px auto;
+}
+/*.display .content {*/
+/*position:relative;*/
+/*margin: 50px auto;*/
+/*}*/

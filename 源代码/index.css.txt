@@ -1,0 +1,32 @@
+*{margin: 0;padding: 0;list-style: none;}
+body{
+    background-color: #eebb66;
+}
+
+/* Ö÷ÌâÄÚÈÝ */
+.main{
+
+}
+.sideright{
+    width: 400px;
+    height: 450px;
+    margin: 200px auto;
+}
+
+input[type="submit"]{
+    margin: 55px;
+    font-size:19px;
+    width: 240px;
+    height: 45px;
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background: #0e62a3;
+    cursor: pointer;
+}
+h1 {
+    color: black;
+}

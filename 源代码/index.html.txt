@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OS</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+ <!-- 主体内容 （登录界面）-->
+ <div class="main">
+        <!-- 右侧登陆界面 -->
+        <div class="sideright">
+                <form action="#" method="get">
+                    <h1>欢迎来到OS页面置换算法</h1>
+                    <a href="simulation.html">
+                        <input type="submit" value="点击按钮进入模拟系统" name="login" onclick="window.open('simulation.html')" />
+                    </a>
+                </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/****先进先出FIFO算法****/
+/*
+ *算法思路：（队列思想）
+ * 建立两个数组，一个表示页地址流数组，一个表示页框数组；
+ * 循环页地址流数组里的元素，将页框数组当成队列来使用，达到先进先出的效果
+ *  相关的数组类的方法：push()、shift()、indexOf()
+ */
+"use strict";
+var arr1 = [2,3,2,1,5,2,4,5,3,2,5,2]; //页地址流数组
+var arr2 = []; //页框数组
+var num = 0; //缺页次数
+for(var i = 0; i < arr1.length; i++){
+    if(arr2.length < 3){ //页框初始化
+        if((arr2.indexOf(arr1[i])) == -1){ //若页框数组里没有该页号了，则加入
+            arr2.push(arr1[i]); //进队列
+        } else { //若页框数组里有该页号了，则不用再加入了，循环页地址流中的下一个页号
+            continue;
+        }
+    } else { //页框初始化后
+        if((arr2.indexOf(arr1[i])) != -1){ //若页框数组里有该页号了，则循环页地址流中的下一个页号
+            document.write("不缺页时：");
+            document.write(arr2);
+            continue;
+        } else { //若页框数组里没有该页号，则删掉第一个元素（因为它最早进来），再从后面插入一个元素
+            arr2.shift(); //出队列
+            arr2.push(arr1[i]); //进队列
+            num++; //同时缺页数加1
+            document.write("缺页时：");
+            document.write(arr2);
+        }
+    }
+}

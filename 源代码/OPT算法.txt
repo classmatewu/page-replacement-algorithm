@@ -1,0 +1,55 @@
+/******OPT(最佳置换)算法******/
+/*
+ *算法思路：关键点：
+ *当缺页时从页号流数组当前下标位置开始，往后循环判断，即向后寻找，直到找到最远使用到的元素，将其替换
+ * 相关的数组类的方法：
+ * splice():指定数组下标删除某元素
+ */
+"use strict";
+var arr1 = [2,3,2,1,5,2,4,5,3,2,5,2]; //页地址流数组
+var arr2 = []; //页框数组
+var num1 = 0; //缺页次数
+var num2; //当缺页时判断是否可以置换了的标志
+for(var i = 0; i < arr1.length; i++) {
+    if(arr2.length < 3) { //页框初始化前
+        if((arr2.indexOf(arr1[i])) != -1) { //有重复，则跳出该循环
+            continue;
+        } else { //无重复，则新页号直接插入到队列尾
+            arr2.push(arr1[i]);
+        }
+    } else { //页框初始化后
+        if((arr2.indexOf(arr1[i])) != -1) { //有重复，则也是直接跳出该循环
+            document.write(`不缺页时：${arr2}`);
+            continue;
+        } else { //无重复，
+            num1++; //缺页数加1
+            num2 = 0;
+            for(var j = i + 1; (num2 < 2) && (j < arr1.length); j++) {\\注意这里的循环跳出条件，贼坑，看我下面注释掉的代码，应该是要取反的，因为是满足才进入，不满足跳出
+                if((arr2.indexOf(arr1[j])) != -1) {
+                    num2++;
+                    document.write(`[${arr2}]`);
+                    document.write(`{${arr2.indexOf(arr1[j])}}`);
+                    arr2.splice(arr2.indexOf(arr1[j]), 1);
+                    document.write(`{${arr2}}`);
+                    arr2.push(arr1[j]);
+                } else {
+                    continue;
+                }
+            }
+            // for(var j = i + 1; (num2 >= 2) || (j >= 13); j++) { //从i开始往后循环数组1,两种情况下跳出循环
+            //     if((arr2.indexOf(arr1[j])) != -1) { //arr1后面有跟arr1数组重复时，num2++，并将该元素调到队列尾
+            //         num2++;
+            //         arr2.splice((arr2.indexOf(arr1[j])), 1);
+            //         arr2.push(arr1[j]);
+            //     } else {
+            //         continue;
+            //     }
+            // }
+            //跳出循环后，删除队头元素，将新元素加到队列尾
+            arr2.shift();
+            arr2.push(arr1[i]);
+            document.write(`缺页时：${arr2}`);
+        }
+    }
+}
+document.write(`<br />${num1}<br />`);

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="simulation.css" />
+    <!--<script type="text/javascript" src="js/FIFO.js"></script>-->
+    <!--<script type="text/javascript" src="js/LRU.js"></script>-->
+    <!--<script type="text/javascript" src="js/OPT.js"></script>-->
+    <!--<script type="text/javascript" src="js/random.js"></script>-->
+    <script type="text/javascript" src="jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="simulation.js"></script>
+    <title>页面置换算法</title>
+</head>
+<body>
+<!-- 左侧生成随机生成地址流与页号流界面 -->
+    <div class="abstract">
+        <h3>题目一:页面置换算法的模拟实现及命中率对比 ——17网工1班 吴泽林 201734020126</h3>
+    </div>
+    <div class="chassis">
+        <div class="product">
+            <form>
+                <p class="headline">生成地址流和页号流</p>
+                <p class="address">随机生成400个[0,399]的地址流：</p>
+                <textarea class="addressTxt" placeholder="[0,399]"></textarea>
+                <!--<input class="addressTxt" type="text" value="[0,399]">-->
+                <p class="pageNum">将400个地址流转换成400个[0,39]的页号流：</p>
+                <textarea class="pageNumTxt" placeholder="[0,39]"></textarea>
+                <!--<input class="pageNumTxt" type="text" placeholder="[0,39]">-->
+                <!--<textarea class="a" style="width:200px;height:80px;" placeholder="haihai"></textarea>-->
+                <!--<a href="zhuce.html">-->
+                    <!--<input type="submit" value="一键生成" name="login" onclick="window.open('zhuce.html')" />-->
+                <!--</a>-->
+            </form>
+            <button class="btn">一键生成</button>
+            <br>
+            <hr>
+        </div>
+
+        <div class="display">
+                <table border="3">
+                    <caption class="headline">三大页面置换算法命中率</caption>
+                    <thead>
+                        <tr>
+                            <th>页 框 数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>OPT 命 中 率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>FIFO 命 中 率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                            <th>LRU 命 中 率&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody class="content">
+
+                    </tbody>
+                </table>
+        </div>
+
+        <div class="summary">
+
+        </div>
+    </div>
+</body>
+</html>
